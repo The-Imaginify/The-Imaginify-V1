@@ -32,6 +32,7 @@ import { useState, useTransition } from "react";
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils";
 import { updatedCredits } from "@/lib/actions/user.actions";
 import MediaUploader from "./MediaUploader";
+import TransformedImage from "./TransformedImage";
 
 export const formSchema = z.object({
   title: z.string(),
@@ -96,7 +97,7 @@ const TransformationForm = ({
     );
     setNewTransformation(null);
     startTransition(async () => {
-      /* await updatedCredits(userId,creditFee) */
+      await updatedCredits(userId, -1);
     });
   };
   const onSelectFieldHandler = (
@@ -204,7 +205,7 @@ const TransformationForm = ({
           <CustomField
             control={form.control}
             name="publicId"
-            className="flex size-full flex-col"
+            className="flex flex-col size-full"
             render={({ field }) => (
               <MediaUploader
                 onValueChange={field.onChange}
@@ -214,6 +215,14 @@ const TransformationForm = ({
                 type={type}
               />
             )}
+          />
+          <TransformedImage
+            image={image}
+            type={type}
+            title={form.getValues().title}
+            isTransforming={isTransforming}
+            setIsTransforming={setIsTransforming}
+            transformationConfig={transformationConfig}
           />
         </div>
         <div className="flex flex-col gap-4">
