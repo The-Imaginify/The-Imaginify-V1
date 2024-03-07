@@ -3,7 +3,7 @@ export interface IImage extends Document {
   title: string;
   transformationType: string;
   publicId: string;
-  secureUrl: string;
+  secureURL: string;
   width?: number;
   height?: number;
   config?: object;
@@ -28,8 +28,8 @@ const ImageSchema = new Schema({
     type: String,
     required: true,
   },
-  secureUrl: {
-    type: URL,
+  secureURL: {
+    type: String,
     required: true,
   },
   width: {
@@ -42,7 +42,7 @@ const ImageSchema = new Schema({
     type: Object,
   },
   transformationUrl: {
-    type: URL,
+    type: String,
   },
   aspectRation: {
     type: String,
@@ -67,5 +67,5 @@ const ImageSchema = new Schema({
   },
 });
 
-const Image = models?.Image || model('Image', ImageSchema);
+const Image = models?.Image || model("Image", ImageSchema);
 export default Image;
