@@ -44,7 +44,7 @@ const ImageSchema = new Schema({
   transformationUrl: {
     type: String,
   },
-  aspectRation: {
+  aspectRatio: {
     type: String,
   },
   color: {
