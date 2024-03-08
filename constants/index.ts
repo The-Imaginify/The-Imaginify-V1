@@ -30,6 +30,11 @@ export const navLinks = [
     icon: "/assets/icons/camera.svg",
   },
   {
+    label: "Filter Color",
+    route: "/transformations/add/filterColor",
+    icon: "/assets/icons/grayscale.svg",
+  },
+  {
     label: "Profile",
     route: "/profile",
     icon: "/assets/icons/profile.svg",
@@ -158,6 +163,13 @@ export const transformationTypes = {
       recolor: { prompt: "", to: "", multiple: true },
     },
     icon: "filter.svg",
+  },
+  filterColor: {
+    type: "filterColor",
+    title: "Filter Color",
+    subTitle: "Convert the image to grayscale",
+    config: { grayscale: true },
+    icon: "grayscale.svg",
   },
 };
 

@@ -180,7 +180,12 @@ const TransformationForm = ({
     setIsSubmitting(false);
   }
   useEffect(() => {
-    if (image && (type === "restore" || type === "removeBackground")) {
+    if (
+      image &&
+      (type === "restore" ||
+        type === "removeBackground" ||
+        type === "filterColor")
+    ) {
       setNewTransformation(transformationType.config);
     }
   }, [image, transformationType.config, type]);

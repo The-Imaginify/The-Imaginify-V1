@@ -69,6 +69,7 @@ declare type Transformations = {
     multiple?: boolean;
   };
   removeBackground?: boolean;
+  filterColor?: boolean;
 };
 
 // ====== TRANSACTION PARAMS
@@ -93,7 +94,8 @@ declare type TransformationTypeKey =
   | "fill"
   | "remove"
   | "recolor"
-  | "removeBackground";
+  | "removeBackground"
+  | "filterColor";
 
 // ====== URL QUERY PARAMS
 declare type FormUrlQueryParams = {
